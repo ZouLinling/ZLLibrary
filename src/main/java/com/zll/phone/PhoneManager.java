@@ -18,7 +18,6 @@ public class PhoneManager {
 			return imei;
 	}
 
-	// sim卡唯�?���?
 	public static String getSIMEI(Context context) {
 		TelephonyManager tm = (TelephonyManager) context
 				.getSystemService(Activity.TELEPHONY_SERVICE);
@@ -41,9 +40,9 @@ public class PhoneManager {
 
 	public static String getPhoneProvider(Context context) {
 		String simei = getSIMEI(context);
-		// IMSI号前�?�?60是国家，紧接�?���?�?0 02是中国移动，01是中国联通，03是中国电信�?
+		// IMSI号前�?�?60是国家，紧接�?���?�?0 02是中国移动，01是中国联通，03是中国电信�?
 		if (simei.startsWith("4600001")) {
-			return "中国联�?";
+			return "中国联�?";
 		} else if (simei.startsWith("4600002")) {
 			return "中国移动";
 		} else if (simei.startsWith("4600003")) {
