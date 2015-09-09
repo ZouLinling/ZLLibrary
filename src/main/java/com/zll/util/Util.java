@@ -11,6 +11,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 public class Util {
 	public Util() {
@@ -99,7 +103,7 @@ public class Util {
 				buf.append(Integer.toHexString(i));
 			}
 
-			return buf.toString();
+			return buf.toString().toUpperCase();
 
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
@@ -130,5 +134,43 @@ public class Util {
 	 */
 	public static String formatMoney(float money) {
 		return String.format("￥%.2f", money);
+	}
+
+	/**
+	 *  根据listviewitem的高度现实listview的高度
+	 * @param listView listview item必须是LinearLayout
+	 */
+	public static void setListViewHeight(ListView listView) {
+
+		ListAdapter listAdapter = listView.getAdapter();
+
+		if(listAdapter == null) {
+
+			return;
+
+		}
+
+		int totalHeight = 0;
+
+		for (int i = 0; i < listAdapter.getCount(); i++) {
+
+			View listItem = listAdapter.getView(i, null, listView);
+
+			listItem.measure(0, 0);
+
+			totalHeight += listItem.getMeasuredHeight();
+
+		}
+		ViewGroup.LayoutParams params = listView.getLayoutParams();
+		params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+		listView.setLayoutParams(params);
+	}
+
+	public static boolean checkMobile(String mobile) {
+		if (!TextUtils.isEmpty(mobile) && mobile.matches("^((\\+86)|(86))?((13[0-9])|(14[5,7])|(15[^4,\\D])|(18[0-3,5-9]))\\d{8}$")) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

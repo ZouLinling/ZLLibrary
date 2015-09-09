@@ -82,7 +82,7 @@ public class SelectPictureHelper {
     /**
      * 构造函数
      * @param isLimit 是否分割图片
-     * @param activity 如果是Fragment中使用，则使用这个构造函数
+     * @param fragment 如果是Fragment中使用，则使用这个构造函数
      */
     public SelectPictureHelper(boolean isLimit, Fragment fragment) {
         this.isLimit = isLimit;

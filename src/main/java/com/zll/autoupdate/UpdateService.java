@@ -43,7 +43,7 @@ import com.zll.util.Util;
  * 
  * @author zou
  * @see
- * 提供自动更新功能，需要准备条件如下：
+ * *提供自动更新功能，需要准备条件如下：
  * 1. 在Manifest中增加service声明        
  *  <service
  *           android:name="com.zll.autoupdate.UpdateService"
