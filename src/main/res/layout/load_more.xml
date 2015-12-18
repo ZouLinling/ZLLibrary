@@ -3,7 +3,7 @@
     android:id="@+id/loadmore_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F0F0" >
+    android:background="#C8C8C8" >
 
     <RelativeLayout
         android:layout_width="match_parent"

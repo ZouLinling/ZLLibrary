@@ -3,6 +3,8 @@ package com.zll.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.ActivityManager;
 import android.content.ComponentName;
@@ -178,5 +180,4 @@ public class Util {
 		final float scale = context.getResources().getDisplayMetrics().density;
 		return (int) (dp * scale + 0.5f);
 	}
-
 }

@@ -150,11 +150,7 @@ public class RatingBar extends LinearLayout {
             }
 
         }
-
-
     }
-
-
     /**
      * change stat listener
      */

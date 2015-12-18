@@ -46,8 +46,6 @@
         android:id="@+id/titleText"
         style="@style/text_title"
         android:layout_centerInParent="true"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
         android:padding="10.0dip"
         android:textColor="#FFFFFF"
         android:singleLine="true"
